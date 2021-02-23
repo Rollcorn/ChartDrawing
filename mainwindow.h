@@ -6,6 +6,7 @@
 #include <QtWidgets>
 #include <QGridLayout>
 #include <QListView>
+#include <QApplication>
 
 #include "chartarea.h"
 
@@ -14,7 +15,7 @@ class MainWindow : public QWidget
   Q_OBJECT
 
 public:
-  explicit MainWindow();
+  MainWindow();
 
 private slots:
   void changeStartBtn();
@@ -23,9 +24,10 @@ private slots:
 
 
 private:
-  ChartArea* chart;
+  ChartArea* chartArea;
   QComboBox* funcBox;
-  QLabel* m_start;
+  QLabel* funcBoxLabel;
+/*QLabel* m_start;
   QLabel* m_stop;
   QLabel* m_pause;
   QString startLabel = "Start";
@@ -43,7 +45,7 @@ private:
   double m_to;
   double m_step;
   int numberOfPoints = (m_to-m_from)/m_step;
-  int m_func;
+  int m_func;*/
 };
 
 #endif // MAINWINDOW_H

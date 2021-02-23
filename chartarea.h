@@ -9,16 +9,19 @@
 
 class ChartArea : public QWidget
 {
+
   Q_OBJECT
+
 public:
-  enum Functions {squareFunc, SinCosFunc, LogFunc, RevSinFunc};
+  enum Function {squareFunc, SinCosFunc, LogFunc, RevSinFunc};
+
   explicit ChartArea(QWidget* parent = nullptr);
 
   QSize minimumSizeHint() const override;
   QSize sizeHint() const override;
 
 public slots:
-  void setFunc();
+  void setFunc(Function func);
   void startDraw();
   void stopDraw();
   void pauseDraw();
@@ -27,7 +30,7 @@ protected:
   void paintEvent(QPaintEvent* event) override;
 
 private:
-  Functions func;
+  Function func;
 };
 
 #endif // CHARTAREA_H
